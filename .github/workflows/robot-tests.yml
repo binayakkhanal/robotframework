@@ -1,0 +1,36 @@
+name: Robot Framework Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  robot-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Robot tests in parallel with Pabot
+        run: |
+          pabot --outputdir results tests/
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-results
+          path: results/
+
