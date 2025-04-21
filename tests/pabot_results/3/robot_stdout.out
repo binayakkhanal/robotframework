@@ -1,0 +1,37 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.testDemo4 :: To validate the login form                                 
+==============================================================================
+Invalid username                                                      | PASS |
+------------------------------------------------------------------------------
+Invalid password                                                      | PASS |
+------------------------------------------------------------------------------
+special characters                                                      
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/binayakkhanal/PycharmProjects/pythonProject1/tests/testDemo4.robot:14
+    T:  special characters    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/binayakkhanal/PycharmProjects/pythonProject1/tests/testDemo4.robot:14
+      Validate Unsuccessful Login    @#$    learning
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/binayakkhanal/PycharmProjects/pythonProject1/tests/testDemo4.robot:21
+      Fill the login Form    ${username}    ${password}
+      |  ${username} = @#$ (str)
+      |  ${password} = learning (str)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/binayakkhanal/PycharmProjects/pythonProject1/tests/testDemo4.robot:31
+      Input Text    id:username    ${username}
+      |  ${username} = @#$ (str)
+______________________________________________________________________________
+| FAIL |
+Element with locator 'id:username' not found.
+------------------------------------------------------------------------------
+Tests.testDemo4 :: To validate the login form                         | FAIL |
+3 tests, 2 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+3 tests, 2 passed, 1 failed
+==============================================================================
+Output:  /Users/binayakkhanal/PycharmProjects/pythonProject1/tests/pabot_results/3/output.xml
