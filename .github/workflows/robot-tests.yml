@@ -22,14 +22,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install robotframework
+          pip install pabot
+          # Add any other dependencies you need here
 
       - name: Run Robot tests in parallel with Pabot
         run: |
           pabot --outputdir results tests/
 
       - name: Upload test reports
-        uses: actions/upload-artifact@v3  # Updated to v3
+        uses: actions/upload-artifact@v2
         with:
           name: robot-results
           path: results/
